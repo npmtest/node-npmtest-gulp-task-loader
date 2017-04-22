@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-gulp-task-loader",     "homepage": "https://github.com/npmtest/node-npmtest-gulp-task-loader",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-gulp-task-loader.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [gulp-task-loader (v1.4.4)](https://github.com/hontas/gulp-task-loader#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-gulp-task-loader.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-gulp-task-loader) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-gulp-task-loader.svg)](https://travis-ci.org/npmtest/node-npmtest-gulp-task-loader)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-gulp-task-loader",
+    "keywords": [
+        "coverage",
+        "test",
+        "gulp-task-loader"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_gulp_task_loader.js",
+    "name": "npmtest-gulp-task-loader",
+    "nameAlias": "npmtest_gulp_task_loader",
+    "nameOriginal": "npmtest-gulp-task-loader",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-gulp-task-loader.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
